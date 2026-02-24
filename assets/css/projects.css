@@ -1,0 +1,1297 @@
+/* =========================================================
+   🏗️ تصميم صفحة المشاريع - Projects Page
+   ========================================================= */
+
+/* Hero Section */
+.projects-hero {
+    padding: 100px 0 60px;
+    background: linear-gradient(135deg, var(--bg) 0%, var(--bg-alt) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.projects-hero::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(214, 180, 108, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: floatingOrb 20s ease-in-out infinite;
+}
+
+.projects-hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.projects-hero .hero-badge {
+    display: inline-block;
+    background: var(--gold-soft);
+    color: var(--gold);
+    padding: 8px 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 1px solid rgba(214, 180, 108, 0.2);
+    animation: fadeInDown 0.6s ease;
+}
+
+.projects-hero .hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 16px;
+    animation: fadeInUp 0.6s ease 0.1s backwards;
+}
+
+.projects-hero .hero-description {
+    font-size: 1.1rem;
+    color: var(--text-soft);
+    line-height: 1.8;
+    animation: fadeInUp 0.6s ease 0.2s backwards;
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 80px 0 100px;
+    background: var(--bg);
+}
+
+/* Filters */
+.projects-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 50px;
+    padding: 20px;
+    background: var(--bg-elevated);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--shadow-soft);
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--bg);
+    border: 2px solid var(--border-soft);
+    border-radius: 999px;
+    color: var(--text-soft);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--gold-soft);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-2px);
+}
+
+.filter-btn:hover::before {
+    opacity: 1;
+}
+
+.filter-btn.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(214, 180, 108, 0.3);
+}
+
+.filter-btn.active::before {
+    opacity: 0;
+}
+
+.filter-count {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.filter-btn.active .filter-count {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.filter-btn span:first-child {
+    position: relative;
+    z-index: 1;
+}
+
+.filter-count {
+    position: relative;
+    z-index: 1;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    box-shadow: var(--shadow-soft);
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    animation: fadeInScale 0.5s ease backwards;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.05s; }
+.project-card:nth-child(2) { animation-delay: 0.1s; }
+.project-card:nth-child(3) { animation-delay: 0.15s; }
+.project-card:nth-child(4) { animation-delay: 0.2s; }
+.project-card:nth-child(5) { animation-delay: 0.25s; }
+.project-card:nth-child(6) { animation-delay: 0.3s; }
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--gold);
+}
+
+.project-card.hidden {
+    display: none;
+}
+
+/* Project Image */
+.project-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: var(--bg-alt);
+}
+
+.project-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0;
+}
+
+.project-card:hover .project-main-image {
+    transform: scale(1.1);
+}
+
+.project-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-alt);
+    color: var(--text-light);
+}
+
+.project-placeholder svg {
+    opacity: 0.3;
+}
+
+/* Project Overlay */
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.3) 50%,
+        rgba(0, 0, 0, 0.85) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-category {
+    background: var(--gold);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.project-images-count {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 6px 12px;
+    border-radius: 999px;
+    backdrop-filter: blur(10px);
+}
+
+.view-project-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--gold);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: translateY(20px);
+    box-shadow: 0 8px 20px rgba(214, 180, 108, 0.3);
+}
+
+.project-card:hover .view-project-btn {
+    transform: translateY(0);
+}
+
+.view-project-btn:hover {
+    background: #c39e57;
+    box-shadow: 0 12px 30px rgba(214, 180, 108, 0.5);
+    transform: translateY(-2px) scale(1.05);
+}
+
+.view-project-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.view-project-btn:hover svg {
+    transform: translateX(-4px);
+}
+
+/* Project Content */
+.project-content {
+    padding: 24px;
+}
+
+.project-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover .project-title {
+    color: var(--gold);
+}
+
+.project-description {
+    font-size: 0.9rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+}
+
+/* Empty State */
+.projects-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-soft);
+}
+
+.projects-empty svg {
+    margin: 0 auto 20px;
+    color: var(--text-light);
+    opacity: 0.5;
+}
+
+.projects-empty h3 {
+    font-size: 1.3rem;
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+.projects-empty p {
+    font-size: 0.95rem;
+    color: var(--text-soft);
+}
+
+/* =========================================================
+   🖼️ Modal Gallery
+   ========================================================= */
+
+.project-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.project-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    position: relative;
+    z-index: 2;
+    background: var(--bg-elevated);
+    border-radius: var(--radius-xl);
+    max-width: 1200px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 40px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(214, 180, 108, 0.1);
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--gold);
+    z-index: 10;
+}
+
+.modal-close svg {
+    color: var(--gold);
+    stroke-width: 2.5;
+}
+
+.modal-close:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+.modal-close:hover svg {
+    color: #fff;
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 20px;
+}
+
+.modal-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.modal-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-soft);
+}
+
+.modal-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.modal-gallery-item {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 4/3;
+    background: var(--bg-alt);
+    transition: all 0.3s ease;
+    animation: fadeInScale 0.4s ease backwards;
+}
+
+.modal-gallery-item:nth-child(1) { animation-delay: 0.05s; }
+.modal-gallery-item:nth-child(2) { animation-delay: 0.1s; }
+.modal-gallery-item:nth-child(3) { animation-delay: 0.15s; }
+.modal-gallery-item:nth-child(4) { animation-delay: 0.2s; }
+.modal-gallery-item:nth-child(5) { animation-delay: 0.25s; }
+.modal-gallery-item:nth-child(6) { animation-delay: 0.3s; }
+
+.modal-gallery-item:hover {
+    transform: translateY(-4px) rotateZ(2deg);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.modal-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0;
+}
+
+.modal-gallery-item:hover img {
+    transform: scale(1.15) rotate(2deg);
+}
+
+.modal-gallery-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-gallery-item:hover .modal-gallery-item-overlay {
+    opacity: 1;
+}
+
+.modal-gallery-item-icon {
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+/* =========================================================
+   🔍 Image Lightbox
+   ========================================================= */
+
+.image-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.image-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: rgba(214, 180, 108, 0.15);
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--gold);
+    z-index: 10;
+}
+
+.lightbox-close svg {
+    color: var(--gold);
+    stroke-width: 2.5;
+}
+
+.lightbox-close:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    transform: rotate(90deg);
+}
+
+.lightbox-close:hover svg {
+    color: #fff;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(214, 180, 108, 0.15);
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--gold);
+    z-index: 10;
+}
+
+.lightbox-nav svg {
+    color: var(--gold);
+    stroke-width: 2.5;
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
+
+.lightbox-nav:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-nav:hover svg {
+    color: #fff;
+}
+
+.lightbox-nav:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 2;
+}
+
+#lightboxImage {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.lightbox-counter {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================================
+   📱 التصميم المتجاوب
+   ========================================================= */
+
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+    }
+
+    .modal-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-hero {
+        padding: 80px 0 50px;
+    }
+
+    .projects-hero .hero-title {
+        font-size: 2rem;
+    }
+
+    .projects-hero .hero-description {
+        font-size: 1rem;
+    }
+
+    .projects-section {
+        padding: 60px 0 80px;
+    }
+
+    .projects-filters {
+        gap: 8px;
+        padding: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        flex: 0 1 auto;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .project-image-wrapper {
+        height: 240px;
+    }
+
+    .project-overlay {
+        padding: 16px;
+    }
+
+    .view-project-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .modal-content {
+        padding: 30px 20px;
+        max-height: 92vh;
+        border-radius: var(--radius-md);
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+    }
+
+    .modal-subtitle {
+        font-size: 0.88rem;
+    }
+
+    .modal-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .lightbox-close,
+    .lightbox-nav {
+        width: 50px;
+        height: 50px;
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 15px;
+    }
+
+    .lightbox-prev {
+        left: 15px;
+    }
+
+    .lightbox-next {
+        right: 15px;
+    }
+
+    #lightboxImage {
+        max-height: 75vh;
+    }
+
+    .lightbox-counter {
+        bottom: -35px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .projects-hero {
+        padding: 70px 0 45px;
+    }
+
+    .projects-hero .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .projects-hero .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .projects-filters {
+        gap: 6px;
+        padding: 14px;
+    }
+
+    .filter-btn {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+
+    .filter-count {
+        font-size: 0.75rem;
+        padding: 2px 6px;
+    }
+
+    .project-image-wrapper {
+        height: 220px;
+    }
+
+    .project-content {
+        padding: 18px;
+    }
+
+    .project-title {
+        font-size: 1.15rem;
+    }
+
+    .project-description {
+        font-size: 0.88rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-hero {
+        padding: 60px 0 40px;
+    }
+
+    .projects-hero .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .projects-hero .hero-badge {
+        font-size: 12px;
+        padding: 6px 16px;
+    }
+
+    .projects-hero .hero-description {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+
+    .projects-section {
+        padding: 50px 0 70px;
+    }
+
+    /* ✅ تعديل الفلاتر للجوال: صف واحد/صفين صغيرين */
+    .projects-filters {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        padding: 12px 10px;
+    }
+
+    .filter-btn {
+        justify-content: center;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        flex: 0 0 auto;
+        white-space: nowrap;
+        min-height: 32px;
+    }
+
+    .projects-grid {
+        gap: 20px;
+    }
+
+    .project-image-wrapper {
+        height: 200px;
+    }
+
+    .project-content {
+        padding: 16px;
+    }
+
+    .project-title {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+
+    .project-description {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    .project-category {
+        font-size: 0.8rem;
+        padding: 5px 12px;
+    }
+
+    .project-images-count {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+
+    .view-project-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .modal-content {
+        padding: 20px 12px;
+        max-height: 94vh;
+    }
+
+    .modal-header {
+        margin-bottom: 25px;
+        padding-top: 10px;
+    }
+
+    .modal-title {
+        font-size: 1.3rem;
+    }
+
+    .modal-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .modal-gallery {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .lightbox-close,
+    .lightbox-nav {
+        width: 44px;
+        height: 44px;
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 15px;
+    }
+
+    .lightbox-prev {
+        left: 15px;
+    }
+
+    .lightbox-next {
+        right: 15px;
+    }
+
+    .lightbox-close svg,
+    .lightbox-nav svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    #lightboxImage {
+        max-height: 70vh;
+    }
+
+    .lightbox-counter {
+        bottom: -35px;
+        font-size: 0.85rem;
+        padding: 6px 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .projects-hero {
+        padding: 50px 0 35px;
+    }
+
+    .projects-hero .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .projects-hero .hero-badge {
+        font-size: 11px;
+        padding: 5px 14px;
+    }
+
+    .projects-filters {
+        padding: 10px 8px;
+        gap: 5px;
+    }
+
+    .filter-btn {
+        padding: 6px 8px;
+        font-size: 0.78rem;
+    }
+
+    .project-image-wrapper {
+        height: 180px;
+    }
+
+    .project-content {
+        padding: 14px;
+    }
+
+    .project-title {
+        font-size: 1.05rem;
+    }
+
+    .project-description {
+        font-size: 0.83rem;
+    }
+
+    .modal-content {
+        padding: 18px 10px;
+    }
+
+    .modal-title {
+        font-size: 1.2rem;
+    }
+
+    .lightbox-close,
+    .lightbox-nav {
+        width: 40px;
+        height: 40px;
+    }
+
+    .lightbox-close {
+        top: 10px;
+        right: 10px;
+    }
+
+    .lightbox-prev {
+        left: 10px;
+    }
+
+    .lightbox-next {
+        right: 10px;
+    }
+
+    #lightboxImage {
+        max-height: 65vh;
+    }
+}
+
+@media (max-width: 360px) {
+    .projects-hero .hero-title {
+        font-size: 1.4rem;
+    }
+
+    .project-image-wrapper {
+        height: 160px;
+    }
+
+    .project-title {
+        font-size: 1rem;
+    }
+
+    .modal-title {
+        font-size: 1.15rem;
+    }
+}
+
+/* ===== تحسينات خاصة للهواتف ===== */
+@media (max-width: 768px) {
+    /* تحسين اللمس */
+    .filter-btn,
+    .project-card,
+    .view-project-btn,
+    .modal-close,
+    .lightbox-close,
+    .lightbox-nav,
+    .modal-gallery-item {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* تحسين التمرير */
+    .modal-content {
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+
+    /* إخفاء scroll bar على الموبايل */
+    .modal-content::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* تقليل حركة الأنيميشن */
+    .project-card,
+    .modal-gallery-item {
+        transition-duration: 0.25s;
+    }
+
+    /* تحسين الصور للموبايل */
+    .project-main-image,
+    .modal-gallery-item img {
+        image-rendering: auto;
+    }
+
+    /* منع التحديد غير المرغوب */
+    .project-title,
+    .modal-title {
+        user-select: none;
+        -webkit-user-select: none;
+    }
+}
+
+/* ===== Landscape Mode (الوضع الأفقي للهواتف) ===== */
+@media (max-width: 896px) and (orientation: landscape) {
+    .projects-hero {
+        padding: 50px 0 40px;
+    }
+
+    .projects-hero .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .project-image-wrapper {
+        height: 200px;
+    }
+
+    .modal-content {
+        max-height: 85vh;
+    }
+
+    #lightboxImage {
+        max-height: 80vh;
+    }
+
+    .lightbox-counter {
+        bottom: 10px;
+    }
+
+    /* صفين في الوضع الأفقي */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* ===== Safe Area للأجهزة الحديثة (iPhone X+) ===== */
+@supports (padding: max(0px)) {
+    @media (max-width: 768px) {
+        .modal-content {
+            padding-left: max(12px, env(safe-area-inset-left));
+            padding-right: max(12px, env(safe-area-inset-right));
+            padding-bottom: max(20px, env(safe-area-inset-bottom));
+        }
+
+        .modal-close {
+            top: max(12px, env(safe-area-inset-top));
+            right: max(12px, env(safe-area-inset-right));
+        }
+
+        .lightbox-close {
+            top: max(15px, env(safe-area-inset-top));
+            right: max(15px, env(safe-area-inset-right));
+        }
+
+        .lightbox-prev {
+            left: max(15px, env(safe-area-inset-left));
+        }
+
+        .lightbox-next {
+            right: max(15px, env(safe-area-inset-right));
+        }
+    }
+}
+
+/* =========================================================
+   🎬 الأنيميشن
+   ========================================================= */
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) translateZ(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) translateZ(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) translateZ(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) translateZ(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateZ(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateZ(0);
+    }
+}
+
+@keyframes floatingOrb {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+    50% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+    75% {
+        transform: translate(20px, 30px) scale(1.05);
+    }
+}
+
+/* =========================================================
+   ⚡ تحسينات الأداء
+   ========================================================= */
+
+.project-card,
+.modal-gallery-item,
+.lightbox-content {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* تحسين الخطوط */
+.modal-title,
+.project-title {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar للمودال */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: var(--bg-alt);
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 4px;
+}
+
+/* =========================================================
+   📱 تحسينات خاصة للأجهزة اللمسية
+   ========================================================= */
+
+/* إضافة feedback للمس */
+.touch-device .filter-btn,
+.touch-device .project-card,
+.touch-device .view-project-btn,
+.touch-device .modal-close,
+.touch-device .lightbox-close,
+.touch-device .lightbox-nav,
+.touch-device .modal-gallery-item {
+    -webkit-tap-highlight-color: rgba(214, 180, 108, 0.2);
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* تحسين الضغط على الأجهزة اللمسية */
+.touch-device .filter-btn:active {
+    transform: scale(0.95);
+}
+
+.touch-device .project-card:active {
+    transform: scale(0.98);
+}
+
+.touch-device .view-project-btn:active {
+    transform: scale(0.95);
+}
+
+.touch-device .modal-gallery-item:active {
+    transform: scale(0.97);
+}
+
+/* تكبير مساحة اللمس للأزرار */
+.touch-device .lightbox-close::after,
+.touch-device .lightbox-nav::after,
+.touch-device .modal-close::after {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    z-index: -1;
+}
+
+/* منع overflow الأفقي */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    /* تحسين الخطوط على الموبايل */
+    .project-title,
+    .modal-title {
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* منع zoom عند التركيز على الحقول */
+    input,
+    select,
+    textarea {
+        font-size: 16px !important;
+    }
+}

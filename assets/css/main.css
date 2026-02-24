@@ -1,0 +1,15 @@
+/* ملف تجميعي */
+@import url('base.css');
+@import url('header.css');
+@import url('hero.css');
+@import url('villa-showcase.css');
+@import url('before-after.css');
+@import url('pillars.css');
+@import url('signature-showcase.css');
+@import url('services-quick.css');
+@import url('services-gallery.css');
+@import url('projects-strip.css');
+@import url('cta-contact.css');
+@import url('contact.css');
+@import url('about.css');
+@import url('footer.css');

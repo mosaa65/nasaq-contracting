@@ -1,0 +1,440 @@
+/* قسم 3 ركائز - أساس عملنا */
+
+/* نقاط الركائز تعتمد على ألوان الثيم العامة */
+.pillar-points li {
+    color: var(--text-soft);
+}
+
+/* الحاوية العامة للقسم */
+.pillars-section {
+    position: relative;
+    padding: 70px 0;
+    background: var(--grad-light);
+    overflow: hidden;
+    transition: background 0.6s ease;
+}
+
+/* خلفية تأثيرية خفيفة مثل باقي الأقسام */
+.pillars-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top left, rgba(214, 180, 108, 0.10), transparent 70%),
+        radial-gradient(circle at bottom right, rgba(214, 180, 108, 0.06), transparent 70%);
+    opacity: 0.9;
+    pointer-events: none;
+    animation: float-bg-pillars 14s ease-in-out infinite alternate;
+}
+
+@keyframes float-bg-pillars {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-12px) scale(1.02); }
+}
+
+/* خلفيات دوائر متحركة إضافية (ديكور ناعم) */
+.pillars-orbits {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.orbit-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(214, 180, 108, 0.16);
+    box-shadow: 0 0 24px rgba(214, 180, 108, 0.08);
+    animation: orbitRotate 26s linear infinite;
+    opacity: 0.20;
+}
+
+.circle-sm {
+    width: 120px;
+    height: 120px;
+    top: 14%;
+    right: 12%;
+}
+
+.circle-md {
+    width: 220px;
+    height: 220px;
+    bottom: 10%;
+    left: 8%;
+    animation-duration: 34s;
+}
+
+.circle-lg {
+    width: 380px;
+    height: 380px;
+    top: -8%;
+    left: 32%;
+    animation-duration: 40s;
+}
+
+@keyframes orbitRotate {
+    from { transform: rotate(0deg) translate3d(0,0,0); }
+    to { transform: rotate(360deg) translate3d(0,0,0); }
+}
+
+/* ترويسة القسم */
+.pillars-header {
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto 32px;
+    text-align: center;
+    color: var(--text-main);
+    z-index: 1;
+    animation: fade-in-pillars 1s ease both;
+}
+
+.pillars-header .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    border: 1px solid rgba(214, 180, 108, 0.4);
+    color: var(--gold, #d6b46c);
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+.pillars-header h2 {
+    font-size: 24px;
+    margin: 12px 0 8px;
+    font-weight: 700;
+    color: var(--text-main);
+    animation: fade-slide-up-pillars 0.9s ease 0.15s both;
+}
+
+.pillars-header p {
+    font-size: 13px;
+    color: var(--text-soft);
+    line-height: 1.9;
+    animation: fade-in-pillars 0.9s ease 0.25s both;
+}
+
+@keyframes fade-in-pillars {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fade-slide-up-pillars {
+    from { opacity: 0; transform: translateY(26px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* الشبكة */
+.pillars-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* البطاقات */
+.pillar-card {
+    position: relative;
+    padding: 14px 14px 16px;
+    background:
+        radial-gradient(circle at top left, rgba(214, 180, 108, 0.06), transparent),
+        var(--bg-elevated);
+    border-radius: var(--radius-xl, 18px);
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--shadow-soft);
+    font-size: 12px;
+    line-height: 1.9;
+    transition: all 0.5s ease, box-shadow 0.35s ease;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* دعم reveal.js مثل باقي الأقسام */
+.reveal.visible .pillar-card,
+.pillar-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* لمعان خفيف أعلى البطاقة */
+.pillar-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(214, 180, 108, 0.12), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+/* خطوط ديكور */
+.pillar-card::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border-top: 1px solid rgba(214, 180, 108, 0.26);
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    opacity: 0.16;
+    transform: rotate(-8deg);
+}
+
+/* أيقونة دائرية في الأعلى */
+.pillar-icon {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 10px;
+}
+
+.icon-core {
+    position: absolute;
+    inset: 8px;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+        rgba(214, 180, 108, 0.7),
+        rgba(15, 23, 42, 1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-core .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #f9fafb;
+    box-shadow: 0 0 10px rgba(249, 250, 251, 0.9);
+}
+
+.icon-orbit {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(214, 180, 108, 0.55);
+    animation: iconOrbit 6s linear infinite;
+    transform-origin: center;
+}
+
+.icon-orbit::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    right: 9px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(214, 180, 108, 0.95);
+    box-shadow: 0 0 8px rgba(214, 180, 108, 0.9);
+}
+
+.orbit-delay { animation-delay: 0.8s; }
+.orbit-fast { animation-duration: 4s; }
+
+@keyframes iconOrbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* محتوى البطاقة */
+.pillar-card .pill {
+    display: inline-flex;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 9px;
+    color: var(--gold, #d6b46c);
+    border: 1px solid rgba(214, 180, 108, 0.4);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    background: rgba(0, 0, 0, 0.02);
+}
+/* ضبط عرض قسم الركائز ليطابق باقي الأقسام */
+.pillars-section > .container {
+    max-width: 1180px;  /* نفس الرقم اللي تستخدمه في باقي الأقسام */
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.pillar-card .card-title {
+    font-size: 14px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #d6b46c;
+}
+
+.pillar-card p {
+    color: var(--text-soft);
+    margin-bottom: 6px;
+}
+
+/* قائمة النقاط */
+.pillar-points {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 10px;
+    color: var(--text-soft);
+    font-size: 11px;
+}
+
+.pillar-points li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 3px;
+}
+
+.pillar-points li::before {
+    content: "•";
+    font-size: 12px;
+    color: var(--gold, #d6b46c);
+}
+
+/* بادج سفلي */
+.card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-size: 9px;
+    color: #d6b46c;
+    background: linear-gradient(
+        90deg,
+        rgba(214, 180, 108, 0.3),
+        rgba(15, 23, 42, 0.9)
+    );
+    backdrop-filter: blur(8px);
+}
+
+/* هوفر */
+.pillar-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(214, 180, 108, 0.9);
+    box-shadow: var(--shadow-hover, 0 18px 50px rgba(15, 23, 42, 0.8));
+}
+
+.pillar-card:hover::before {
+    opacity: 1;
+}
+
+/* جزء الصور داخل بطاقات الركائز - سلايدر */
+.pillar-media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #020817;
+    border: 1px solid rgba(214, 180, 108, 0.22);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.65);
+    margin-bottom: 8px;
+}
+
+.pillar-media-img {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(1.03);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    opacity: 0;
+}
+
+/* الصورة الفعالة */
+.pillar-media-img.is-active {
+    opacity: 1;
+}
+
+/* طبقة غامقة بسيطة */
+.pillar-media-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.05)
+    );
+    pointer-events: none;
+}
+
+.pillar-media-label {
+    position: absolute;
+    right: 10px;
+    bottom: 28px;
+    padding: 4px 10px;
+    font-size: 10px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.65);
+    color: #f9fafb;
+    backdrop-filter: blur(8px);
+}
+
+.pillar-media-tag {
+    position: absolute;
+    right: 10px;
+    bottom: 8px;
+    font-size: 9px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    color: #e5e7eb;
+    background: rgba(214, 180, 108, 0.28);
+    backdrop-filter: blur(8px);
+}
+
+/* تأثير عند هوفر البطاقة على الصورة */
+.pillar-card:hover .pillar-media-img.is-active {
+    transform: scale(1.06);
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+    .pillars-section {
+        padding: 45px 0 46px;
+    }
+    .pillars-header {
+        padding: 0 14px;
+    }
+    .pillars-header h2 {
+        font-size: 20px;
+    }
+    .pillars-header p {
+        font-size: 12px;
+    }
+    .pillars-grid {
+        gap: 16px;
+    }
+    .pillar-card {
+        padding: 12px 12px 14px;
+        border-radius: 16px;
+        font-size: 12px;
+    }
+    .pillar-media {
+        aspect-ratio: 16 / 11;
+    }
+}
+
+/* ديسكتوب واسع */
+@media (min-width: 1024px) {
+    .pillars-section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .pillars-grid {
+        gap: 22px;
+    }
+}

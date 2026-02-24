@@ -1,0 +1,1554 @@
+/* =========================================================
+   ✨ تصميم صفحة معرض الخدمات - Services Gallery
+   ========================================================= */
+
+/* قسم البطل (Hero Section) - نفس التصميم من الصفحة الرئيسية */
+.services-hero-slider {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 0 70px;
+    overflow: hidden;
+}
+
+.services-hero-slider .hero-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.services-hero-slider .hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: saturate(1.05);
+    opacity: 0;
+    transform: scale(1.05);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.services-hero-slider .hero-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.services-hero-slider .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to top, rgba(0,0,0,0.83), rgba(0,0,0,0.18)),
+        radial-gradient(circle at top, rgba(0,0,0,0.4), transparent);
+    z-index: 1;
+}
+
+.services-hero-slider .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 18px;
+    color: #f9fafb;
+}
+
+.services-hero-slider .hero-kicker {
+    font-size: 11px;
+    color: var(--gold);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    animation: fadeInDown 0.6s ease;
+}
+
+.services-hero-slider .hero-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    color: #f9fafb;
+    animation: fadeInUp 0.6s ease 0.1s backwards;
+}
+
+.services-hero-slider .hero-title span {
+    color: var(--gold);
+}
+
+.services-hero-slider .hero-subtitle {
+    font-size: 14px;
+    color: rgba(249,250,251,0.9);
+    max-width: 520px;
+    margin-bottom: 18px;
+    animation: fadeInUp 0.6s ease 0.2s backwards;
+}
+
+.services-hero-slider .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+    animation: fadeInUp 0.6s ease 0.3s backwards;
+}
+
+.services-hero-slider .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 9px;
+    color: var(--gold);
+    animation: fadeInUp 0.6s ease 0.4s backwards;
+}
+
+.services-hero-slider .hero-badges span {
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(214, 180, 108, 0.32);
+    background: rgba(5, 8, 16, 0.9);
+    backdrop-filter: blur(4px);
+}
+
+/* قسم معرض الخدمات */
+.services-gallery-section {
+    padding: 80px 0 100px;
+    background: var(--bg);
+}
+
+.services-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 20px;
+}
+
+/* بطاقة الخدمة */
+.service-item {
+    background: var(--bg-elevated);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--border-soft);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    /* تحسين الأداء */
+    will-change: transform, box-shadow;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+/* Staggered Animation للبطاقات */
+.service-item:nth-child(1) { animation: slideInUp 0.6s ease 0.1s backwards; }
+.service-item:nth-child(2) { animation: slideInUp 0.6s ease 0.2s backwards; }
+.service-item:nth-child(3) { animation: slideInUp 0.6s ease 0.3s backwards; }
+.service-item:nth-child(4) { animation: slideInUp 0.6s ease 0.4s backwards; }
+.service-item:nth-child(5) { animation: slideInUp 0.6s ease 0.5s backwards; }
+
+.service-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: var(--gold);
+}
+
+
+/* صورة الخدمة */
+.service-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: var(--bg-alt);
+}
+
+.service-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0;
+}
+
+.service-item:hover .service-main-image {
+    transform: scale(1.08);
+}
+
+/* تراكب الصورة */
+.service-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, 
+        transparent 0%, 
+        rgba(0, 0, 0, 0.3) 50%, 
+        rgba(0, 0, 0, 0.8) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.service-item:hover .service-overlay {
+    opacity: 1;
+}
+
+.view-gallery-btn {
+    background: var(--gold);
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: translateY(20px);
+    box-shadow: 0 8px 20px rgba(214, 180, 108, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* تأثير موجة على الزر */
+.view-gallery-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.view-gallery-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.service-item:hover .view-gallery-btn {
+    transform: translateY(0);
+}
+
+.view-gallery-btn:hover {
+    background: #c39e57;
+    box-shadow: 0 12px 30px rgba(214, 180, 108, 0.5);
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* محتوى الخدمة */
+.service-content {
+    padding: 24px;
+}
+
+.service-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.service-item:hover .service-title {
+    color: var(--gold);
+}
+
+.service-description {
+    font-size: 0.95rem;
+    color: var(--text-soft);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* معلومات إضافية */
+.service-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    background: var(--bg-alt);
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.meta-item svg {
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+.service-item:hover .meta-item {
+    background: var(--gold-soft);
+    color: var(--gold);
+}
+
+/* =========================================================
+   🖼️ معرض الصور المنبثق (Modal Gallery)
+   ========================================================= */
+
+.gallery-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.gallery-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    position: relative;
+    z-index: 2;
+    background: var(--bg-elevated);
+    border-radius: var(--radius-xl);
+    max-width: 1200px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 40px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-modal.active .modal-content {
+    transform: scale(1);
+}
+
+/* تخصيص شريط التمرير */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: var(--bg-alt);
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 4px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(214, 180, 108, 0.1);
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--gold);
+    z-index: 10;
+}
+
+.modal-close svg {
+    color: var(--gold);
+    stroke-width: 2.5;
+}
+
+.modal-close:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+.modal-close:hover svg {
+    color: #fff;
+}
+
+/* رأس المودال */
+.modal-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 20px;
+}
+
+.modal-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.modal-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-soft);
+}
+
+/* شبكة المعرض */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 4/3;
+    background: var(--bg-alt);
+    transition: all 0.3s ease;
+    animation: fadeInScale 0.4s ease backwards;
+}
+
+/* Staggered animation للصور في المعرض */
+.gallery-item:nth-child(1) { animation-delay: 0.05s; }
+.gallery-item:nth-child(2) { animation-delay: 0.1s; }
+.gallery-item:nth-child(3) { animation-delay: 0.15s; }
+.gallery-item:nth-child(4) { animation-delay: 0.2s; }
+.gallery-item:nth-child(5) { animation-delay: 0.25s; }
+.gallery-item:nth-child(6) { animation-delay: 0.3s; }
+.gallery-item:nth-child(7) { animation-delay: 0.35s; }
+.gallery-item:nth-child(8) { animation-delay: 0.4s; }
+
+.gallery-item:hover {
+    transform: translateY(-4px) rotateZ(2deg);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.15) rotate(2deg);
+}
+
+.gallery-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+    opacity: 1;
+}
+
+.gallery-item-icon {
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+/* =========================================================
+   🔍 عارض الصور بالحجم الكامل (Lightbox)
+   ========================================================= */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: rgba(214, 180, 108, 0.15);
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--gold);
+    z-index: 10;
+}
+
+.lightbox-close svg {
+    color: var(--gold);
+    stroke-width: 2.5;
+}
+
+.lightbox-close:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    transform: rotate(90deg);
+}
+
+.lightbox-close:hover svg {
+    color: #fff;
+}
+
+/* أزرار التنقل - بالاتجاه الصحيح للعربية */
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(214, 180, 108, 0.15);
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--gold);
+    z-index: 10;
+}
+
+.lightbox-nav svg {
+    color: var(--gold);
+    stroke-width: 2.5;
+}
+
+/* الزر الأيسر للصورة التالية في العربية */
+.lightbox-prev {
+    left: 30px;
+}
+
+/* الزر الأيمن للصورة السابقة في العربية */
+.lightbox-next {
+    right: 30px;
+}
+
+.lightbox-nav:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-nav:hover svg {
+    color: #fff;
+}
+
+.lightbox-nav:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* محتوى Lightbox */
+.lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 2;
+}
+
+#lightboxImage {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.lightbox-counter {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================================
+   🎬 الأنيميشن - محسّنة للأداء (GPU Accelerated)
+   ========================================================= */
+
+/* أنيميشن الظهور من الأسفل */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) translateZ(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) translateZ(0);
+    }
+}
+
+/* أنيميشن الظهور من الأعلى */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) translateZ(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) translateZ(0);
+    }
+}
+
+/* أنيميشن الانزلاق من الأسفل مع Scale */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95) translateZ(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1) translateZ(0);
+    }
+}
+
+/* أنيميشن الظهور مع Scale */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateZ(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateZ(0);
+    }
+}
+
+
+
+/* أنيميشن الدوران البطيء */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* أنيميشن الكرة الطافية */
+@keyframes floatingOrb {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+    50% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+    75% {
+        transform: translate(20px, 30px) scale(1.05);
+    }
+}
+
+/* أنيميشن الموجة */
+@keyframes wave {
+    0%, 100% {
+        transform: translateX(0) translateZ(0);
+    }
+    50% {
+        transform: translateX(20px) translateZ(0);
+    }
+}
+
+/* أنيميشن التلاشي السريع */
+@keyframes quickFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* أنيميشن الاهتزاز */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+/* أنيميشن التكبير المتدرج */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5) translateZ(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateZ(0);
+    }
+}
+
+/* تحسين الأداء - استخدام Hardware Acceleration */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* =========================================================
+   📱 التصميم المتجاوب (Responsive) - محسّن للهواتف
+   ========================================================= */
+
+/* ===== Tablets & Small Laptops (1024px وما دون) ===== */
+@media (max-width: 1024px) {
+    .services-gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    
+    .service-item {
+        /* تقليل الأنيميشن على التابلت */
+        transition-duration: 0.3s;
+    }
+}
+
+/* ===== Tablets Portrait (768px وما دون) ===== */
+@media (max-width: 768px) {
+    /* Hero Slider */
+    .services-hero-slider {
+        min-height: 78vh;
+        padding-bottom: 40px;
+    }
+    
+    .services-hero-slider .hero-title {
+        font-size: 22px;
+    }
+    
+    .services-hero-slider .hero-subtitle {
+        font-size: 12px;
+    }
+    
+    .services-hero-slider .hero-kicker {
+        font-size: 10px;
+    }
+    
+    .services-hero-slider .hero-badges {
+        font-size: 8px;
+    }
+
+    .services-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .service-image-wrapper {
+        height: 240px;
+    }
+    
+    /* تحسين البطاقات للتابلت */
+    .service-item:hover {
+        transform: translateY(-6px) scale(1.01);
+    }
+
+    .modal-content {
+        padding: 25px 18px;
+        max-height: 92vh;
+        border-radius: var(--radius-md);
+    }
+
+    .modal-header {
+        margin-bottom: 25px;
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .lightbox-close,
+    .lightbox-nav {
+        width: 50px;
+        height: 50px;
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 15px;
+    }
+
+    .lightbox-prev {
+        left: 15px;
+    }
+
+    .lightbox-next {
+        right: 15px;
+    }
+
+    #lightboxImage {
+        max-height: 75vh;
+    }
+    
+    .lightbox-counter {
+        bottom: -35px;
+        font-size: 0.85rem;
+    }
+}
+
+/* ===== Mobile Large (640px وما دون) ===== */
+@media (max-width: 640px) {
+    .services-hero {
+        padding: 60px 0 40px;
+    }
+    
+    .hero-badge {
+        font-size: 13px;
+        padding: 6px 16px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .service-image-wrapper {
+        height: 220px;
+    }
+
+    .service-content {
+        padding: 18px;
+    }
+
+    .service-title {
+        font-size: 1.35rem;
+        margin-bottom: 10px;
+    }
+
+    .service-description {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .service-meta {
+        gap: 12px;
+    }
+
+    .meta-item {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+
+    .modal-close {
+        width: 40px;
+        height: 40px;
+        top: 12px;
+        right: 12px;
+    }
+
+    .modal-title {
+        font-size: 1.35rem;
+    }
+
+    .modal-subtitle {
+        font-size: 0.88rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
+/* ===== Mobile Medium (480px وما دون) ===== */
+@media (max-width: 480px) {
+    /* Hero Slider */
+    .services-hero-slider {
+        min-height: 70vh;
+        padding-bottom: 30px;
+    }
+    
+    .services-hero-slider .hero-title {
+        font-size: 20px;
+    }
+    
+    .services-hero-slider .hero-subtitle {
+        font-size: 11px;
+        max-width: 90%;
+    }
+    
+    .services-hero-slider .hero-kicker {
+        font-size: 9px;
+    }
+    
+    .services-hero-slider .hero-badges {
+        font-size: 7px;
+    }
+    
+    .services-hero-slider .hero-badges span {
+        padding: 3px 8px;
+    }
+
+    .services-gallery-section {
+        padding: 50px 0 60px;
+    }
+
+    .services-gallery-grid {
+        gap: 20px;
+    }
+
+    .service-image-wrapper {
+        height: 200px;
+    }
+
+    .service-content {
+        padding: 16px;
+    }
+
+    .service-title {
+        font-size: 1.25rem;
+    }
+
+    .service-description {
+        font-size: 0.88rem;
+        margin-bottom: 14px;
+    }
+
+    .view-gallery-btn {
+        padding: 10px 22px;
+        font-size: 14px;
+    }
+
+    .modal-content {
+        padding: 20px 12px;
+        max-height: 94vh;
+    }
+
+    .modal-header {
+        margin-bottom: 20px;
+        padding-top: 15px;
+    }
+
+    .modal-title {
+        font-size: 1.25rem;
+    }
+
+    .modal-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .lightbox-close,
+    .lightbox-nav {
+        width: 44px;
+        height: 44px;
+    }
+
+    .lightbox-close svg,
+    .lightbox-nav svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    #lightboxImage {
+        max-height: 65vh;
+        border-radius: 8px;
+    }
+
+    .lightbox-counter {
+        bottom: -32px;
+        font-size: 0.8rem;
+        padding: 6px 16px;
+    }
+}
+
+/* ===== Mobile Small (400px وما دون) ===== */
+@media (max-width: 400px) {
+    .services-hero {
+        padding: 45px 0 30px;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-description {
+        font-size: 0.88rem;
+    }
+
+    .service-image-wrapper {
+        height: 180px;
+    }
+
+    .service-content {
+        padding: 14px;
+    }
+
+    .service-title {
+        font-size: 1.2rem;
+    }
+
+    .service-description {
+        font-size: 0.85rem;
+    }
+
+    .service-meta {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+
+    .meta-item {
+        font-size: 0.78rem;
+    }
+
+    .modal-content {
+        padding: 18px 10px;
+    }
+
+    .modal-header {
+        padding-top: 10px;
+        margin-bottom: 18px;
+    }
+
+    .modal-title {
+        font-size: 1.15rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .gallery-item {
+        aspect-ratio: 16/10;
+    }
+
+    .lightbox-close {
+        top: 10px;
+        right:  10px;
+    }
+
+    .lightbox-prev {
+        left: 10px;
+    }
+
+    .lightbox-next {
+        right: 10px;
+    }
+}
+
+/* ===== Mobile Extra Small (360px وما دون) ===== */
+@media (max-width: 360px) {
+    /* Hero Slider */
+    .services-hero-slider .hero-title {
+        font-size: 18px;
+    }
+    
+    .services-hero-slider .hero-subtitle {
+        font-size: 10px;
+    }
+    
+    .services-hero-slider .hero-kicker {
+        font-size: 8px;
+    }
+
+    .service-image-wrapper {
+        height: 160px;
+    }
+
+    .service-title {
+        font-size: 1.15rem;
+    }
+
+    .service-description {
+        font-size: 0.83rem;
+    }
+
+    .view-gallery-btn {
+        padding: 8px 18px;
+        font-size: 13px;
+    }
+
+    .modal-title {
+        font-size: 1.1rem;
+    }
+
+    .modal-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .lightbox-counter {
+        font-size: 0.75rem;
+        padding: 5px 14px;
+    }
+}
+
+/* ===== Mobile Tiny (320px وما دون) ===== */
+@media (max-width: 320px) {
+    /* Hero Slider */
+    .services-hero-slider {
+        min-height: 65vh;
+        padding-bottom: 25px;
+    }
+    
+    .services-hero-slider .hero-title {
+        font-size: 17px;
+    }
+    
+    .services-hero-slider .hero-subtitle {
+        font-size: 9px;
+    }
+    
+    .services-hero-slider .hero-kicker {
+        font-size: 7px;
+    }
+    
+    .services-hero-slider .hero-badges {
+        font-size: 6px;
+    }
+
+    .services-gallery-grid {
+        gap: 16px;
+    }
+
+    .service-image-wrapper {
+        height: 150px;
+    }
+
+    .service-content {
+        padding: 12px;
+    }
+
+    .service-title {
+        font-size: 1.1rem;
+    }
+
+    .service-description {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
+    .view-gallery-btn {
+        padding: 7px 16px;
+        font-size: 12px;
+    }
+
+    .modal-close {
+        width: 36px;
+        height: 36px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .gallery-item {
+        border-radius: 8px;
+    }
+
+    .lightbox-close,
+    .lightbox-nav {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* ===== تحسينات خاصة للهواتف ===== */
+@media (max-width: 768px) {
+    /* تحسين اللمس */
+    .service-item,
+    .gallery-item,
+    .view-gallery-btn,
+    .modal-close,
+    .lightbox-close,
+    .lightbox-nav {
+        /* مساحة لمس أكبر */
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* تحسين التمرير */
+    .modal-content {
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+
+    /* إخفاء scroll bar على الموبايل */
+    .modal-content::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* تقليل حركة الأنيميشن */
+    .service-item,
+    .gallery-item {
+        transition-duration: 0.25s;
+    }
+
+    /* تحسين الصور للموبايل */
+    .service-main-image,
+    .gallery-item img {
+        image-rendering: auto;
+    }
+
+    /* منع التكبير غير المرغوب */
+    input,
+    select,
+    textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* ===== Landscape Mode (الوضع الأفقي للهواتف) ===== */
+@media (max-width: 896px) and (orientation: landscape) {
+    .services-hero {
+        padding: 40px 0 35px;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .service-image-wrapper {
+        height: 180px;
+    }
+
+    .modal-content {
+        max-height: 85vh;
+    }
+
+    #lightboxImage {
+        max-height: 80vh;
+    }
+
+    .lightbox-counter {
+        bottom: 10px;
+    }
+
+    /* صفين في الوضع الأفقي */
+    .services-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* ===== Dark Mode على الهواتف ===== */
+@media (max-width: 768px) and (prefers-color-scheme: dark) {
+    .service-item {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-content {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+    }
+}
+
+/* =========================================================
+   ⚡ تحسينات الأداء - Performance Optimization
+   ========================================================= */
+
+/* تحسين رندرينج الصور */
+.service-main-image,
+.gallery-item img,
+#lightboxImage {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    /* Hardware Acceleration */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* إضافة تأثيرات للتحميل */
+.service-main-image[loading="lazy"],
+.gallery-item img[loading="lazy"] {
+    background: var(--bg-alt);
+}
+
+/* تحسين الأداء للعناصر المتحركة */
+.service-item,
+.gallery-item,
+.modal-content,
+.lightbox-content {
+    /* GPU Acceleration */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* تقليل التأثير على Reflow */
+.service-overlay,
+.gallery-item-overlay,
+.modal-overlay,
+.lightbox-overlay {
+    will-change: opacity;
+}
+
+/* تحسين الأنيميشن */
+.view-gallery-btn,
+.service-main-image {
+    will-change: transform;
+}
+
+/* منع Layout Shift */
+.service-image-wrapper,
+.gallery-item {
+    contain: layout style paint;
+}
+
+/* Smooth Scrolling مع الأداء */
+.modal-content {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* تحسين Font Rendering */
+.service-title,
+.modal-title,
+.hero-title {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* تقليل Paint Operations */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* تحسين الأداء على الأجهزة الضعيفة */
+@media (max-width: 768px) {
+    .service-item::before,
+    .services-hero::before,
+    .services-hero::after {
+        display: none;
+    }
+}
+
+/* Preload Critical Resources */
+.service-main-image,
+.gallery-item img {
+    content-visibility: auto;
+}
+
+/* =========================================================
+   📱 تحسينات خاصة للأجهزة اللمسية
+   ========================================================= */
+
+/* إضافة feedback للمس */
+.touch-device .service-item,
+.touch-device .gallery-item,
+.touch-device .view-gallery-btn,
+.touch-device .modal-close,
+.touch-device .lightbox-close,
+.touch-device .lightbox-nav {
+    -webkit-tap-highlight-color: rgba(214, 180, 108, 0.2);
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* تحسين الضغط على الأجهزة اللمسية */
+.touch-device .service-item:active {
+    transform: scale(0.98);
+    transition-duration: 0.1s;
+}
+
+.touch-device .view-gallery-btn:active {
+    transform: scale(0.95);
+}
+
+.touch-device .gallery-item:active {
+    transform: scale(0.97);
+}
+
+/* تحسين Scroll على الأجهزة اللمسية */
+.touch-device .modal-content {
+    scroll-snap-type: y proximity;
+    overscroll-behavior-y: contain;
+}
+
+/* تكبير مساحة اللمس للأزرار */
+.touch-device .lightbox-close::after,
+.touch-device .lightbox-nav::after,
+.touch-device .modal-close::after,
+.touch-device .view-gallery-btn::after {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    z-index: -1;
+}
+
+/* =========================================================
+   ⚡ تحسينات للأجهزة الضعيفة
+   ========================================================= */
+
+/* تعطيل الأنيميشن الثقيلة على الأجهزة الضعيفة */
+.low-end-device .services-hero::before,
+.low-end-device .services-hero::after,
+.low-end-device .service-item::before {
+    display: none !important;
+}
+
+
+.low-end-device .service-item,
+.low-end-device .gallery-item {
+    transition-duration: 0.2s !important;
+}
+
+.low-end-device .service-item:hover {
+    transform: translateY(-4px) !important;
+}
+
+.low-end-device .gallery-item:hover img {
+    transform: scale(1.05) !important;
+}
+
+/* تقليل جودة الظلال */
+.low-end-device .service-item {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.low-end-device .service-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* =========================================================
+   🎯 تحسينات إضافية للموبايل
+   ========================================================= */
+
+/* منع التحديد غير المرغوب */
+@media (max-width: 768px) {
+    .hero-title,
+    .service-title,
+    .modal-title {
+        user-select: none;
+        -webkit-user-select: none;
+    }
+    
+    /* تحسين الصور على الشبكات البطيئة */
+    .service-main-image,
+    .gallery-item img {
+        image-rendering: auto;
+        image-rendering: -webkit-optimize-contrast;
+    }
+    
+    /* منع overflow الأفقي */
+    body {
+        overflow-x: hidden;
+    }
+    
+    /* تحسين الخطوط على الموبايل */
+    body,
+    .service-description,
+    .modal-subtitle {
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+/* Safe Area للأجهزة الحديثة (iPhone X+) */
+@supports (padding: max(0px)) {
+    @media (max-width: 768px) {
+        .modal-content {
+            padding-left: max(12px, env(safe-area-inset-left));
+            padding-right: max(12px, env(safe-area-inset-right));
+            padding-bottom: max(20px, env(safe-area-inset-bottom));
+        }
+        
+        .modal-close {
+            top: max(12px, env(safe-area-inset-top));
+            right: max(12px, env(safe-area-inset-right));
+        }
+        
+        .lightbox-close {
+            top: max(15px, env(safe-area-inset-top));
+            right: max(15px, env(safe-area-inset-right));
+        }
+        
+        .lightbox-prev {
+            left: max(15px, env(safe-area-inset-left));
+        }
+        
+        .lightbox-next {
+            right: max(15px, env(safe-area-inset-right));
+        }
+    }
+}
+
+/* تحسين للشاشات عالية الكثافة (Retina) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .service-main-image,
+    .gallery-item img,
+    #lightboxImage {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}

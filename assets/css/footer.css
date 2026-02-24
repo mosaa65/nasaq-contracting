@@ -1,0 +1,431 @@
+/* =========================================================
+   Footer - قبل & بعد للتشطيبات
+   ملف: assets/css/footer.css
+   متوافق مع نظام الثيم:
+   - data-theme="light"
+   - data-theme="dark"
+   - data-theme بالوضع Auto من theme.js
+   ========================================================= */
+
+/* الذهبي المعتمد للموقع */
+:root {
+  --gold-color: #d6b46c;
+}
+
+/* داخل الفوتر والأزرار العائمة فقط */
+:where(.site-footer, .floating-buttons) {
+  --gold-color: #d6b46c;
+}
+
+/* ===================== أساس متغيرات الفوتر ===================== */
+
+:root {
+  /* ألوان الفوتر في الوضع الفاتح */
+  --footer-bg-light:
+    radial-gradient(circle at top left, rgba(214,180,108,0.10), transparent),
+    radial-gradient(circle at top right, rgba(148,163,253,0.10), transparent),
+    linear-gradient(to bottom, #ffffff, #f5f5f7);
+  --footer-text-light: #111827;
+  --footer-link-light: #111827;
+  --footer-link-hover-light: #d6b46c;
+
+  /* ألوان الفوتر في الوضع الداكن */
+  --footer-bg-dark:
+    radial-gradient(circle at top left, rgba(214,180,108,0.12), transparent),
+    radial-gradient(circle at top right, rgba(15,23,42,0.16), transparent),
+    linear-gradient(to bottom, #05070a, #0b0f16);
+  --footer-text-dark: #e5e7eb;
+  --footer-link-dark: rgba(243,244,246,0.9);
+  --footer-link-hover-dark: #d6b46c;
+}
+
+/* ===================== النمط الافتراضي (قبل تحميل الثيم) ===================== */
+/* نجعله قريب من الوضع الداكن لأنه هو الشكل الأساسي للموقع */
+
+.site-footer {
+  --footer-bg: var(--footer-bg-dark);
+  --footer-text: var(--footer-text-dark);
+  --footer-link: var(--footer-link-dark);
+  --footer-link-hover: var(--footer-link-hover-dark);
+
+  position: relative;
+  padding: 3.5rem 0 1.5rem;
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  font-family: "Tajawal", "Cairo", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: hidden;
+  border-top: 1px solid rgba(148,163,253,0.05);
+  color-scheme: dark;
+  isolation: isolate;
+  margin: 5px;
+
+}
+
+/* خط علوي ذهبي ناعم */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset-inline: 6%;
+  top: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to left,
+    transparent,
+    rgba(214,180,108,0.9),
+    transparent
+  );
+  opacity: 0.9;
+}
+
+/* ===================== تفعيل الوضع الداكن ===================== */
+
+html[data-theme="dark"] .site-footer {
+  --footer-bg: var(--footer-bg-dark);
+  --footer-text: var(--footer-text-dark);
+  --footer-link: var(--footer-link-dark);
+  --footer-link-hover: var(--footer-link-hover-dark);
+  color-scheme: dark;
+}
+
+/* ===================== تفعيل الوضع الفاتح ===================== */
+
+html[data-theme="light"] .site-footer {
+  --footer-bg: var(--footer-bg-light);
+  --footer-text: var(--footer-text-light);
+  --footer-link: rgba(55,65,81,0.96);
+  --footer-link-hover: var(--footer-link-hover-light);
+  color-scheme: light;
+  border-top-color: rgba(148,163,253,0.14);
+}
+
+html[data-theme="light"] .site-footer::before {
+  background: linear-gradient(
+    to left,
+    transparent,
+    rgba(214,180,108,0.9),
+    transparent
+  );
+}
+
+/* ===================== الروابط والنصوص ===================== */
+
+.site-footer a {
+  color: var(--footer-link);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.site-footer a:hover {
+  color: var(--footer-link-hover);
+  transform: translateX(-2px);
+}
+
+.site-footer p {
+  font-size: 0.9rem;
+  color: rgba(209,213,219,0.9);
+  margin-bottom: 0.7rem;
+}
+
+html[data-theme="light"] .site-footer p {
+  color: rgba(75,85,99,0.96);
+}
+
+/* ===================== عناوين الأعمدة ===================== */
+
+.footer-title {
+  font-family: "Tajawal", "Cairo", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: #f9fafb;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.footer-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 2px;
+  border-radius: 999px;
+  background-color: var(--gold-color);
+}
+
+html[data-theme="light"] .footer-title {
+  color: #111827;
+}
+
+/* ===================== قائمة الروابط ===================== */
+
+.site-footer .list-unstyled {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-footer .list-unstyled li {
+  margin-bottom: 0.45rem;
+}
+
+.site-footer .list-unstyled a {
+  position: relative;
+  padding-right: 16px;
+  display: inline-block;
+}
+
+.site-footer .list-unstyled a::before {
+  content: "•";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gold-color);
+  font-size: 0.7rem;
+  opacity: 0.9;
+  transition: all 0.18s ease;
+}
+
+.site-footer .list-unstyled a:hover::before {
+  transform: translateY(-50%) translateX(-2px);
+}
+
+/* ===================== هوية قبل & بعد ===================== */
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.before-after-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  margin-bottom: 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(214,180,108,0.3);
+  background: rgba(2,6,23,0.92);
+  color: var(--gold-color);
+  font-size: 0.7rem;
+}
+
+.footer-brand-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gold-color);
+  letter-spacing: 0.4px;
+}
+
+.footer-brand-sub {
+  font-size: 0.8rem;
+  color: rgba(234, 235, 240, 0.78);
+}
+
+.footer-note {
+  font-size: 0.78rem;
+  color: rgba(148,163,253,0.8);
+}
+
+html[data-theme="light"] .before-after-label {
+  background: rgba(255,255,255,0.98);
+  color: #b68a3a;
+}
+
+html[data-theme="light"] .footer-brand-sub,
+html[data-theme="light"] .footer-note {
+  color: rgba(107,114,128,0.98);
+}
+
+/* ===================== أيقونات التواصل ===================== */
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  margin: 20px;
+}
+
+.social-icons a {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(214,180,108,0.5);
+  border: 1px solid rgba(148,163,253,0.12);
+  font-size: 0.9rem;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.7);
+  transition: all 0.2s ease;
+}
+
+.social-icons a:hover {
+  background: var(--gold-color);
+  color: #020817;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(214,180,108,0.5);
+}
+
+html[data-theme="light"] .social-icons a {
+  background: rgba(214,180,108,0.5);
+  color: #020817;
+}
+
+/* ===================== بيانات التواصل ===================== */
+
+.footer-contact i {
+  color: var(--gold-color);
+  margin-left: 6px;
+  font-size: 0.9rem;
+}
+
+/* ===================== ذيل الفوتر ===================== */
+
+.footer-bottom {
+  margin-top: 26px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(148,163,253,0.08);
+  font-size: 0.8rem;
+  color: rgba(156,163,175,0.9);
+  text-align: center;
+}
+
+.footer-bottom a {
+  color: var(--gold-color);
+  font-weight: 500;
+}
+
+html[data-theme="light"] .footer-bottom {
+  color: rgba(75,85,99,0.98);
+  border-top-color: rgba(148,163,253,0.16);
+}
+
+/* ===================== الأزرار العائمة ===================== */
+.floating-buttons {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.floating-buttons a {
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+}
+
+/* واتساب (يبقى كما هو) */
+.floating-buttons .whatsapp {
+  background: #22c55e;
+  color: #ffffff;
+}
+
+/* زر لمعرض قبل/بعد (زر المشاريع "قبل & بعد") */
+.floating-buttons .befor-after {
+  background: transparent;
+  border: 1px solid rgba(214,180,108,0.75);
+  color: var(--gold-color);
+}
+.floating-buttons .snapchat {
+  background: #FFFC00 !important;    /* لون السناب الرسمي */
+  color: #000 !important;
+  border: 1px solid #e4d900 !important;
+}
+/* زر إنستغرام – التدرج الرسمي */
+.floating-buttons .instagram {
+  background: radial-gradient(circle at 30% 30%, #fdf497 0%, #fd5949 40%, #d6249f 70%, #285AEB 100%);
+  border: 1px solid rgba(0,0,0,0.15);
+  color: #ffffff;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+  transition: all 0.2s ease;
+}
+
+.floating-buttons .instagram:hover {
+  transform: translateY(-3px);
+  opacity: 0.95;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+}
+
+
+/* زر العودة للأعلى */
+.floating-buttons .top-btn {
+  background: transparent;
+  border: 1px solid rgba(214,180,108,0.75);
+  color: var(--gold-color);
+  opacity: 0;
+  transform: translateY(10px);
+  font-size: 1rem;
+}
+
+/* Hover عام */
+.floating-buttons a:hover {
+  transform: translateY(-3px);
+  opacity: 0.98;
+}
+
+/* ===================== تجاوب ===================== */
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 2.2rem 0 1.2rem;
+  }
+
+  .footer-title {
+    font-size: 1.05rem;
+  }
+
+  .footer-brand-title {
+    font-size: 1.12rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.76rem;
+    margin-top: 18px;
+  }
+
+  .floating-buttons {
+    left: 12px;
+    bottom: 12px;
+    gap: 8px;
+  }
+
+  .floating-buttons a {
+    width: 46px;
+    height: 46px;
+    font-size: 1.05rem;
+  }
+}
+
+
+/* ===================== تجاوب الأزرار العائمة ===================== */
+
+@media (max-width: 768px) {
+  .floating-buttons {
+    left: 12px;
+    bottom: 12px;
+    gap: 8px;
+  }
+
+  .floating-buttons a {
+    width: 46px;
+    height: 46px;
+    font-size: 1.05rem;
+  }
+}
