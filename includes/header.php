@@ -54,11 +54,6 @@ if (!isset($pageExtraJs))  $pageExtraJs  = "";
     <!-- أي CSS إضافي من الصفحات الداخلية -->
     <?php echo $pageExtraCss; ?>
 
-    <!-- سكربت الهيدر (مؤجل لعدم تعطيل تحميل الصفحة) -->
-    <script src="assets/js/header-scroll.js" defer></script>
-
-    <!-- أي JS إضافي من الصفحات الداخلية -->
-    <?php echo $pageExtraJs; ?>
 </head>
 <body>
 <header class="site-header" role="banner">

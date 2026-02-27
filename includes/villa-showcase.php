@@ -17,8 +17,6 @@ function getProjectImages($category, $projectNumber) {
     $fullPath = __DIR__ . "/../" . $basePath;
 
     if (!is_dir($fullPath)) {
-        // مؤقتًا للتصحيح – احذفه بعد ما تتأكد أن كل شيء تمام
-        echo "<pre>❌ المجلد غير موجود: {$fullPath}</pre>";
         return [];
     }
 
@@ -219,16 +217,11 @@ foreach ($villaShowcase as $i => $item) {
             <?php endforeach; ?>
         </div>
 
-
-
-</section>
-<section>
-    
-        </div>
-            <div class="villa-nav">
+        <div class="villa-nav">
             <button id="prevCards" class="villa-nav-btn" type="button">›</button>
             <button id="nextCards" class="villa-nav-btn" type="button">‹</button>
         </div>
+    </div>
 </section>
 
 

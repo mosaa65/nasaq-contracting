@@ -1,4 +1,4 @@
-<section class="hero services-hero-slider">
+<section class="hero services-hero-slider" id="hero">
     <div class="hero-bg">
         <div class="hero-slide active" style="background-image:url('assets/img/IMG_0242.jpg');"></div>
         <div class="hero-slide" style="background-image:url('assets/img/IMG_0333[1].jpg');"></div>
