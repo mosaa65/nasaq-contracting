@@ -21,7 +21,7 @@ $email   = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
 $service = htmlspecialchars($service, ENT_QUOTES, 'UTF-8');
 $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
 
-$to      = "9o9o9de@gmail.com"; // عدّلها
+$to      = "mliar.dirr@gmail.com"; // عدّلها
 $subject = "طلب تواصل جديد من موقع نَسَق";
 $body    = "الاسم: {$name}\n"
          . "رقم الجوال: {$phone}\n"

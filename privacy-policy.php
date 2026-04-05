@@ -258,9 +258,9 @@ include 'includes/header.php';
 
         <div class="policy-content">
             <ul class="policy-list">
-                <li><strong>الهاتف:</strong> <a href="tel:+966508198692">+966 50 819 8692</a></li>
-                <li><strong>واتساب:</strong> <a href="https://wa.me/966508198692" target="_blank" rel="noopener">+966 50 819 8692</a></li>
-                <li><strong>البريد الإلكتروني:</strong> <a href="mailto:9o9o9de@gmail.com">9o9o9de@gmail.com</a></li>
+                <li><strong>الهاتف:</strong> <a href="tel:+966531033314">+966 53 103 3314</a></li>
+                <li><strong>واتساب:</strong> <a href="https://wa.me/966531033314" target="_blank" rel="noopener">+966 53 103 3314</a></li>
+                <li><strong>البريد الإلكتروني:</strong> <a href="mailto:mliar.dirr@gmail.com">mliar.dirr@gmail.com</a></li>
             </ul>
             <p style="margin-top:10px;font-size:0.9rem;">
                 تاريخ آخر تحديث: <?php echo date('Y-m-d'); ?>

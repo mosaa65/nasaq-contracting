@@ -25,9 +25,9 @@
                 </p>
 
                 <div class="social-icons" aria-label="روابط التواصل الاجتماعي" role="navigation">
-                    <a href="https://www.instagram.com/top8new?igsh=MWlkd21jcjN1MjBzNQ%3D%3D&utm_source=qr" title="إنستغرام" aria-label="إنستغرام"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                    <a href="https://snapchat.com/t/33BmuDOv" title="سناب شات" aria-label="سناب شات"><i class="fab fa-snapchat-ghost" aria-hidden="true"></i></a>
-                    <a href="https://www.tiktok.com/@top8new?_r=1&_t=ZS-91JaEWN9ohw" title="تيك توك" aria-label="تيك توك"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/uq.iy?igsh=MWN6OW9menhwYXJvcw%3D%3D&utm_source=qr" title="إنستغرام" aria-label="إنستغرام"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://snapchat.com/t/56G9BoNd" title="سناب شات" aria-label="سناب شات"><i class="fab fa-snapchat-ghost" aria-hidden="true"></i></a>
+                    <a href="https://www.tiktok.com/@uq.iy?_r=1&_t=ZT-95HpupTnI5e" title="تيك توك" aria-label="تيك توك"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
                 </div>
             </div>
 
@@ -69,11 +69,11 @@
                     </li>
                     <li class="mb-2">
                         <i class="fas fa-phone" aria-hidden="true"></i>
-                        <a href="tel:+966508198692" aria-label="اتصل بنا">+966 50 819 8692</a>
+                        <a href="tel:+966531033314" aria-label="اتصل بنا">+966 53 103 3314</a>
                     </li>
                     <li class="mb-2">
                         <i class="fas fa-envelope" aria-hidden="true"></i>
-                        <a href="mailto:9o9o9de@gmail.com" aria-label="راسلنا">9o9o9de@gmail.com</a>
+                        <a href="mailto:mliar.dirr@gmail.com" aria-label="راسلنا">mliar.dirr@gmail.com</a>
                     </li>
                     <li class="mb-2">
                         <i class="fas fa-clock" aria-hidden="true"></i>
@@ -106,20 +106,20 @@
 <!-- أزرار عائمة: واتساب + المشاريع + رجوع للأعلى -->
 <div class="floating-buttons" aria-hidden="false">
     <!-- واتساب -->
-    <a class="whatsapp" href="https://wa.me/966508198692" target="_blank" rel="noopener noreferrer"
+    <a class="whatsapp" href="https://wa.me/966531033314" target="_blank" rel="noopener noreferrer"
        title="تواصل عبر واتساب" aria-label="تواصل عبر واتساب">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
       <!-- إنستغرام -->
-  <a href="https://www.instagram.com/top8new?igsh=MWlkd21jcjN1MjBzNQ%3D%3D&utm_source=qr" class="instagram" aria-label="Instagram">
+  <a href="https://www.instagram.com/uq.iy?igsh=MWN6OW9menhwYXJvcw%3D%3D&utm_source=qr" class="instagram" aria-label="Instagram">
     <i class="fab fa-instagram"></i>
   </a>
       <!-- سناب شات -->
-  <a href="https://snapchat.com/t/33BmuDOv" class="snapchat" aria-label="Snapchat">
+  <a href="https://snapchat.com/t/56G9BoNd" class="snapchat" aria-label="Snapchat">
     <i class="fab fa-snapchat-ghost"></i>
   </a>
     <!-- تيك توك -->
-  <a href="https://www.tiktok.com/@top8new?_r=1&_t=ZS-91JaEWN9ohw" class="tiktok" aria-label="TikTok">
+  <a href="https://www.tiktok.com/@uq.iy?_r=1&_t=ZT-95HpupTnI5e" class="tiktok" aria-label="TikTok">
     <i class="fab fa-tiktok"></i>
   </a> 
 
