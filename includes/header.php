@@ -25,8 +25,8 @@ if (!isset($pageExtraJs))  $pageExtraJs  = "";
 
     <!-- أيقونة وشعار الموقع -->
 
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
 
     <!-- بيانات المشاركة في السوشيال (OG) -->
     <meta property="og:type" content="website">

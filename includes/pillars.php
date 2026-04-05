@@ -20,7 +20,7 @@
             <!-- الركيزة 1 -->
             <article class="pillar-card"
                      data-pillar
-                     data-images="assets/img/IMG_0269.jpg,assets/img/IMG_0332[1].JPG,assets/img/IMG_0333[1].jpg,assets/img/IMG_0330.jpg">
+                     data-images="assets/img/IMG_0269.JPG,assets/img/IMG_0332[1].JPG,assets/img/IMG_0333[1].JPG,assets/img/IMG_0330.JPG">
 
                 <div class="pillar-media">
                     <div class="pillar-media-img"></div>
@@ -51,7 +51,7 @@
             <!-- الركيزة 2 -->
             <article class="pillar-card"
                      data-pillar
-                     data-images="assets/img/IMG_0325.jpg,assets/img/IMG_0293.jpg,assets/img/IMG_0308.jpg,assets/img/IMG_0286.jpg,assets/img/IMG_0309.jpg,assets/img/IMG_0328.jpg">
+                     data-images="assets/img/IMG_0325.JPG,assets/img/IMG_0293.JPG,assets/img/IMG_0308.JPG,assets/img/IMG_0286.JPG,assets/img/IMG_0309.JPG,assets/img/IMG_0328.JPG">
 
                 <div class="pillar-media">
                     <div class="pillar-media-img"></div>
@@ -82,7 +82,7 @@
             <!-- الركيزة 3 -->
             <article class="pillar-card"
                      data-pillar
-                     data-images="assets/img/IMG_0281[1].jpg,assets/img/IMG_0299.jpg,assets/img/IMG_0283.jpg,assets/img/IMG_0277.jpg">
+                     data-images="assets/img/IMG_0281[1].JPG,assets/img/IMG_0299.JPG,assets/img/IMG_0283.JPG,assets/img/IMG_0277.JPG">
 
                 <div class="pillar-media">
                     <div class="pillar-media-img"></div>
@@ -113,7 +113,7 @@
             <!-- الركيزة 4 -->
             <article class="pillar-card"
                      data-pillar
-                     data-images="assets/img/IMG_0242.jpg,assets/img/IMG_0247.jpg,assets/img/IMG_0333[1].jpg">
+                     data-images="assets/img/IMG_0242.jpg,assets/img/IMG_0247.JPG,assets/img/IMG_0333[1].JPG">
 
                 <div class="pillar-media">
                     <div class="pillar-media-img"></div>

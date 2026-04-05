@@ -2,7 +2,7 @@
     <div class="section-wrapper">
         <div class="signature-layout">
             <div class="signature-visual">
-                <div class="sig-frame sig-frame-1 active" style="background-image:url('assets/img/IMG_0242.JPG');"></div>
+                <div class="sig-frame sig-frame-1 active" style="background-image:url('assets/img/IMG_0242.jpg');"></div>
                 <div class="sig-frame sig-frame-2" style="background-image:url('assets/img/IMG_0247.JPG');"></div>
                 <div class="sig-frame sig-frame-3" style="background-image:url('assets/img/IMG_0332[1].JPG');"></div>
                 <div class="sig-frame sig-frame-4" style="background-image:url('assets/img/IMG_0333[1].JPG');"></div>
