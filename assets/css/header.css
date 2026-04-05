@@ -66,10 +66,12 @@ html[data-theme="dark"] .site-header {
 }
 
 .logo-text-main {
-  font-size: 21px;
-  font-weight: 700;
+  font-family: var(--font-brand);
+  font-size: 24px;
+  font-weight: 800;
   color: var(--gold);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.08em;
+  text-shadow: 0 10px 26px var(--brand-glow);
 }
 
 .logo-text-sub {
@@ -77,6 +79,7 @@ html[data-theme="dark"] .site-header {
   font-weight: 500;
   color: var(--text-soft);
   margin-top: 2px;
+  letter-spacing: 0.03em;
 }
 
 /* روابط سطح المكتب */
@@ -238,6 +241,15 @@ html[data-theme="dark"] .nav-mobile {
    استجابة الشاشات الصغيرة
 ===================================== */
 @media (max-width: 768px) {
+  .logo-text-main {
+    font-size: 21px;
+    letter-spacing: 0.05em;
+  }
+
+  .logo-text-sub {
+    font-size: 12px;
+  }
+
   .nav-desktop {
     display: none;
   }

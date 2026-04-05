@@ -1,7 +1,7 @@
 <?php
-// صفحة سياسة الخصوصية - قبل و بعد مقاولات عامة
+// صفحة سياسة الخصوصية - نَسَق للمقاولات والتشطيبات
 
-$pageTitle    = "سياسة الخصوصية - قبل و بعد مقاولات عامة";
+$pageTitle    = "سياسة الخصوصية";
 $pageExtraCss = '<link rel="stylesheet" href="assets/css/about.css">';
 $pageExtraJs  = '';
 include 'includes/header.php';
@@ -12,9 +12,9 @@ include 'includes/header.php';
     <div class="section-wrapper">
         <div class="about-hero-content">
             <span class="hero-badge">🔒 سياسة الخصوصية</span>
-            <h1 class="hero-title">سياسة الخصوصية لموقع قبل و بعد مقاولات عامة</h1>
+            <h1 class="hero-title">سياسة الخصوصية لموقع نَسَق للمقاولات والتشطيبات</h1>
             <p class="hero-description">
-                نحرص في <strong>قبل و بعد مقاولات عامة</strong> على حماية خصوصيتك وبياناتك الشخصية،
+                نحرص في <strong>نَسَق للمقاولات والتشطيبات</strong> على حماية خصوصيتك وبياناتك الشخصية،
                 ونلتزم باستخدامها فقط للأغراض المشروعة المرتبطة بخدمات المقاولات والتشطيبات
                 التي نقدمها في المملكة العربية السعودية.
             </p>

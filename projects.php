@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "مشاريعنا - قبل و بعد مقاولات عامة";
+$pageTitle = "مشاريعنا";
 $pageExtraCss = '<link rel="stylesheet" href="assets/css/projects.css">';
 $pageExtraJs = '<script src="assets/js/projects.js" defer></script>';
 include 'includes/header.php';
@@ -141,17 +141,17 @@ $projects = [
 
     /*  
     ╔══════════════════════════════════════════════╗
-    ║         🔥 إضافة مشاريع قبل / بعد 🔥       ║
+    ║         🔥 إضافة مشاريع التحولات 🔥        ║
     ╚══════════════════════════════════════════════╝
     */
 
     [
         'id' => 'beforeafter-1',
-        'title' => 'مشروع واجهة — قبل / بعد',
-        'category' => 'قبل/بعد',
+        'title' => 'تحول واجهة سكنية',
+        'category' => 'تحولات',
         'category_slug' => 'before_after_images',
         'project_number' => '1',
-        'description' => 'مشروع تطوير واجهة سكنية يظهر الفرق الحقيقي بين قبل وبعد التنفيذ.',
+        'description' => 'تطوير واجهة سكنية من حالة أولية بسيطة إلى نتيجة نهائية أكثر فخامة وتنظيماً.',
         'images' => [
             "assets/befor_after_images/1/IMG_1408.JPG",
             "assets/befor_after_images/1/IMG_1407.JPG"
@@ -159,11 +159,11 @@ $projects = [
     ],
     [
         'id' => 'beforeafter-2',
-        'title' => 'مشروع داخلي — قبل / بعد',
-        'category' => 'قبل/بعد',
+        'title' => 'تحول مساحة داخلية',
+        'category' => 'تحولات',
         'category_slug' => 'before_after_images',
         'project_number' => '2',
-        'description' => 'تطوير مساحة داخلية كاملة وتحويلها من شكل خام إلى تصميم فاخر.',
+        'description' => 'إعادة صياغة مساحة داخلية كاملة بخامات أرقى وتوزيع أكثر اتزاناً وانسجاماً.',
         'images' => [
             "assets/befor_after_images/2/IMG_1406.JPG",
             "assets/befor_after_images/2/IMG_1405.JPG"
@@ -171,11 +171,11 @@ $projects = [
     ],
     [
         'id' => 'beforeafter-3',
-        'title' => 'مدخل رئيسي — قبل / بعد',
-        'category' => 'قبل/بعد',
+        'title' => 'تحول المدخل الرئيسي',
+        'category' => 'تحولات',
         'category_slug' => 'before_after_images',
         'project_number' => '3',
-        'description' => 'ترميم وتحسين المدخل الرئيسي وإظهار التغيير بوضوح.',
+        'description' => 'معالجة المدخل الرئيسي بخامات وإضاءة وتفاصيل تمنحه حضوراً أقوى وهوية أوضح.',
         'images' => [
             "assets/befor_after_images/3/IMG_1410.JPG",
             "assets/befor_after_images/3/IMG_1409.JPG"
@@ -196,8 +196,8 @@ $projects = array_filter($projects, function($project) {
             <span class="hero-badge">🏗️ معرض المشاريع</span>
             <h1 class="hero-title">مشاريعنا المتميزة</h1>
             <p class="hero-description">
-                نفتخر بعرض مجموعة من مشاريعنا الناجحة في مختلف المجالات. كل مشروع يمثل 
-                التزامنا بالجودة والاحترافية في التنفيذ.
+                نستعرض مجموعة من مشاريعنا المنفذة في مجالات متنوعة، وكل مشروع يعكس
+                فلسفة <strong>نَسَق</strong> في التنظيم، جودة الخامات، ودقة التنفيذ.
             </p>
         </div>
     </div>
@@ -230,10 +230,10 @@ $projects = array_filter($projects, function($project) {
                 <span class="filter-count"><?php echo count(array_filter($projects, fn($p) => $p['category'] === 'ممرات')); ?></span>
             </button>
 
-            <!-- فلتر قبل/بعد -->
-            <button class="filter-btn" data-filter="قبل/بعد">
-                <span>قبل / بعد</span>
-                <span class="filter-count"><?php echo count(array_filter($projects, fn($p) => $p['category'] === 'قبل/بعد')); ?></span>
+            <!-- فلتر التحولات -->
+            <button class="filter-btn" data-filter="تحولات">
+                <span>تحولات</span>
+                <span class="filter-count"><?php echo count(array_filter($projects, fn($p) => $p['category'] === 'تحولات')); ?></span>
             </button>
         </div>
 

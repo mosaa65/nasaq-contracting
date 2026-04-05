@@ -57,7 +57,7 @@
                     <div class="pillar-media-img"></div>
                     <div class="pillar-media-overlay"></div>
                     <div class="pillar-media-label">تشطيبات راقية وتفاصيل فخمة</div>
-                    <div class="pillar-media-tag">قبل / بعد في نفس البطاقة</div>
+                    <div class="pillar-media-tag">مراحل تنفيذ موثقة</div>
                 </div>
 
                 <div class="pillar-icon">

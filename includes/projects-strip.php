@@ -6,7 +6,7 @@ $stripProjects = [
         'category_slug'  => 'fela_imag',
         'project_number' => '1',
         'title'          => 'واجهة فيلا حديثة',
-        'tag_main'       => 'Before / After',
+        'tag_main'       => 'هوية معمارية',
         'tag_soft'       => 'فلل',
         'text'           => 'تشطيب واجهة فيلا بخطوط هندسية ومواد فاخرة تعكس فخامة التصميم وجودة التنفيذ.'
     ],
@@ -71,12 +71,12 @@ $stripProjects = [
         'text'           => 'ممر داخلي فسيح بإضاءة جانبية وخطوط نظيفة تعطي إحساساً بالحركة السلسة.'
     ],
 
-    // ============= قبل وبعد (مدخل رئيسي) =============
+    // ============= تحول مدخل رئيسي =============
     [
         'category_slug'  => 'before_after_images',
         'project_number' => '3',
         'title'          => 'تحويل مدخل رئيسي',
-        'tag_main'       => 'Before / After',
+        'tag_main'       => 'تحول مدروس',
         'tag_soft'       => 'مداخل',
         'text'           => 'تطوير مدخل رئيسي من بناء خام إلى مدخل رخامي مضاء يعكس جودة التنفيذ.'
     ],
@@ -88,7 +88,7 @@ $stripProjects = [
     <div class="section-wrapper">
         <div class="projects-strip-header">
             <span class="eyebrow">لمحات حية من مشاريعنا</span>
-            <h2 class="service-quick-title">قبل &amp; بعد بزاوية واضحة</h2>
+            <h2 class="service-quick-title">تحولات التنفيذ بلمسة نَسَق</h2>
             <p class="section-subtitle">
                 مجموعة مختارة من المشاريع المنفذة، تبرز أسلوبنا في التشطيب، توزيع الإضاءة،
                 واختيار الخامات بطريقة فاخرة ومتناسقة.

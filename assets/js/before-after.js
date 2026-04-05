@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     card.dataset.state = state;
     img.alt = baseAlt
-      ? `${baseAlt} - ${state === 'before' ? 'قبل' : 'بعد'}`
+      ? `${baseAlt} - ${state === 'before' ? 'حالة البداية' : 'النتيجة النهائية'}`
       : img.alt;
 
     labelBefore.classList.toggle('is-active', state === 'before');
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     applyCardState(card, next);
   };
 
-  // تهيئة أولية (ضبط الحالة على "بعد" لكل الكروت)
+  // تهيئة أولية (ضبط الحالة على "النتيجة النهائية" لكل الكروت)
   cards.forEach(card => applyCardState(card, 'after'));
 
   /* ===== تبديل تلقائي كل 5 ثواني ===== */
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const src = lbState === 'before' ? beforeSrc : afterSrc;
     if (src) lbImg.src = src;
     lbImg.alt = baseAlt
-      ? `${baseAlt} - ${lbState === 'before' ? 'قبل' : 'بعد'}`
+      ? `${baseAlt} - ${lbState === 'before' ? 'حالة البداية' : 'النتيجة النهائية'}`
       : '';
 
     // تحديث الليبل داخل اللايت بوكس
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lbLabelAfter.classList.toggle('is-active', lbState === 'after');
 
     if (lbCaption) {
-      const stateText = lbState === 'before' ? 'الصورة قبل التنفيذ' : 'الصورة بعد التنفيذ';
+      const stateText = lbState === 'before' ? 'حالة البداية للمشروع' : 'النتيجة النهائية للمشروع';
       lbCaption.textContent = `${title ? title + ' – ' : ''}${stateText}. ${text}`;
     }
   };
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // أزرار قبل/بعد داخل اللايت بوكس
+  // أزرار التنقل بين الحالة الأولية والنتيجة النهائية داخل اللايت بوكس
   lbPrev?.addEventListener('click', () => {
     lbState = 'before';
     applyLightboxState();

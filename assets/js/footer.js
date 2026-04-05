@@ -1,5 +1,5 @@
 // assets/js/footer.js
-// منطق خاص بالفوتر + الأزرار العائمة في موقع "قبل & بعد"
+// منطق خاص بالفوتر + الأزرار العائمة في موقع "نَسَق"
 
 document.addEventListener('DOMContentLoaded', function () {
   // زر الرجوع للأعلى (يدعم أي ID مستعمل)
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // حركات بسيطة للأزرار العائمة (واتساب / سناب / عرض قبل وبعد)
+  // حركات بسيطة للأزرار العائمة (واتساب / سناب / المشاريع)
   const floatButtons = document.querySelectorAll('.floating-buttons a');
 
   floatButtons.forEach((btn) => {

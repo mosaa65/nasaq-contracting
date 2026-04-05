@@ -6,7 +6,7 @@ $pageExtraCss = '
 $pageExtraJs = '<script src="assets/js/services-gallery.js" defer></script>';
 include 'includes/header.php';
 
-// صور قسم قبل / بعد - نفس مسار صفحة المشاريع
+// صور قسم التحولات - نفس مسار صفحة المشاريع
 $beforeAfterImages = [
     "assets/befor_after_images/1/IMG_1407.JPG",
     "assets/befor_after_images/1/IMG_1408.JPG",
@@ -138,7 +138,7 @@ $beforeAfterImages = [
                 </div>
             </div>
 
-            <!-- خدمة 6: معرض قبل / بعد -->
+            <!-- خدمة 6: معرض التحولات -->
             <div class="service-item" data-service="beforeafter">
                 <div class="service-image-wrapper">
                     <img src="assets/befor_after_images/1/IMG_1408.JPG" class="service-main-image">
@@ -148,9 +148,9 @@ $beforeAfterImages = [
                 </div>
 
                 <div class="service-content">
-                    <h3 class="service-title">معرض قبل / بعد</h3>
+                    <h3 class="service-title">معرض التحولات</h3>
                     <p class="service-description">
-                        شاهد التحول الحقيقي قبل التنفيذ وبعده في مشاريعنا.
+                        شاهد مراحل التنفيذ والنتيجة النهائية في مشاريع مختارة من أعمالنا.
                     </p>
                 </div>
 

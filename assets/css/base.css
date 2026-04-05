@@ -1,5 +1,5 @@
 /* =========================================================
-   🔰 الملف الأساسي لتصميم الموقع - Qabl Zabad Base Styles
+   🔰 الملف الأساسي لتصميم الموقع - Nasaq Base Styles
    ========================================================= */
 
 /* 🎨 الألوان العامة */
@@ -17,6 +17,8 @@
   /* ألوان الهوية */
   --gold: #d6b46c;
   --gold-soft: rgba(214, 180, 108, 0.16);
+  --gold-strong: #c39e57;
+  --brand-glow: rgba(214, 180, 108, 0.26);
 
   /* الحدود والظلال */
   --border-soft: rgba(15, 23, 42, 0.12);
@@ -32,8 +34,8 @@
 
   /* الخطوط */
   --font-main: "Tajawal", system-ui, -apple-system, sans-serif;
-  --font-heading: "Tajawal", sans-serif;
-
+  --font-heading: "Changa", "Tajawal", sans-serif;
+  --font-brand: "Changa", "Tajawal", sans-serif;
 }
 
 /* 🎨 الثيم الداكن */
@@ -99,6 +101,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text);
   font-weight: 700;
   line-height: 1.3;
+  text-wrap: balance;
 }
 
 h1 { font-size: 2rem; }

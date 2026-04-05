@@ -1,27 +1,27 @@
-<?php /* footer.php — قبل & بعد | نسخة ثابتة لكل الصفحات */ ?>
+<?php /* footer.php — نَسَق | نسخة ثابتة لكل الصفحات */ ?>
 
 <footer role="contentinfo" aria-label="تذييل الموقع" class="site-footer">
     <div class="container">
         <div class="row gy-4">
-            <!-- هوية قبل & بعد -->
+            <!-- هوية نَسَق -->
             <div class="col-lg-4 col-md-6">
                 <div class="footer-brand">
                     <div class="before-after-label">
-                        <span>قبل</span> / <span>بعد</span>
-                        <span>| تشطيبات متدرجة بفخامة</span>
+                        <span>هوية تنفيذية متناسقة</span>
+                        <span>| تفاصيل تصنع الفرق</span>
                     </div>
-                    <div class="footer-brand-title">قبل &amp; بعد للتشطيبات</div>
-                    <div class="footer-brand-sub">تحويل الفلل السكنية إلى مساحات عيش فاخرة</div>
+                    <div class="footer-brand-title">نَسَق للمقاولات والتشطيبات</div>
+                    <div class="footer-brand-sub">مقاولات عامة بتفاصيل متناغمة من الفكرة حتى التسليم</div>
                 </div>
 
                 <p class="mb-2">
                     فريق متخصص في تنفيذ وتشطيب الفلل والواجهات الداخلية والخارجية،
-                    نعتمد على رؤية "قبل &amp; بعد" لنُبرز الفارق في كل تفصيلة:
-                    من اختيار المواد والإضاءة إلى توزيع الفراغات وتناسق الألوان.
+                    نعتمد في <strong>نَسَق</strong> على منهج واضح يربط بين اختيار المواد،
+                    توزيع الإضاءة، وانسجام الفراغات ليظهر المشروع بصورة متوازنة ومقنعة.
                 </p>
                 <p class="mb-3">
-                    نوثق المشاريع بصور قبل وبعد، لتشاهد تطوّر الفكرة من مخطط خام
-                    إلى واقع راقٍ يعكس أسلوب حياتك.
+                    نوثق مراحل العمل ونشاركك صورة دقيقة عن التقدّم، من التصور الأول
+                    حتى النتيجة النهائية التي تعكس ذوقك وأسلوب حياتك.
                 </p>
 
                 <div class="social-icons" aria-label="روابط التواصل الاجتماعي" role="navigation">
@@ -37,7 +37,7 @@
                 <nav aria-label="روابط سريعة">
                     <ul class="list-unstyled">
                         <li><a href="index.php#hero">الصفحة الرئيسية</a></li>
-                        <li><a href="projects.php">مشاريع قبل &amp; بعد</a></li>
+                        <li><a href="projects.php">مشاريعنا</a></li>
                         <li><a href="services.php">خدمات التشطيب</a></li>
                         <li><a href="about.php">من نحن ورؤيتنا</a></li>
                         <li><a href="contact.php">احجز استشارتك</a></li>
@@ -61,7 +61,7 @@
 
             <!-- بيانات التواصل -->
             <div class="col-lg-3 col-md-6">
-                <h3 class="footer-title">تواصل مع فريق قبل &amp; بعد</h3>
+                <h3 class="footer-title">تواصل مع فريق نَسَق</h3>
                 <ul class="list-unstyled footer-contact">
                     <li class="mb-2">
                         <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
@@ -81,7 +81,7 @@
                     </li>
                 </ul>
                 <p class="footer-note">
-                    استشارة أولية مجانية لتقييم فيلتك ووضع تصور "قبل &amp; بعد" يناسب ذوقك وميزانيتك.
+                    استشارة أولية مجانية لدراسة مشروعك وبناء تصور متناسق يلائم ذوقك وميزانيتك.
                 </p>
             </div>
         </div>
@@ -90,12 +90,12 @@
             <div class="row align-items-center">
                 <div class="col-md-6 text-md-start text-center">
                     <p class="mb-0">
-                        &copy; <?php echo date("Y"); ?> قبل &amp; بعد للتشطيبات السكنية. جميع الحقوق محفوظة.
+                        &copy; <?php echo date("Y"); ?> نَسَق للمقاولات والتشطيبات. جميع الحقوق محفوظة.
                     </p>
                 </div>
                 <div class="col-md-6 text-md-end text-center">
                     <small>
-                        تم تصميم هذا الموقع ليبرز الفارق الحقيقي بين <strong>قبل</strong> &amp; <strong>بعد</strong>.
+                        تم تصميم هذا الموقع ليعكس هوية <strong>نَسَق</strong> في الترتيب والتفاصيل المتقنة.
                     </small>
                 </div>
             </div>
@@ -103,7 +103,7 @@
     </div>
 </footer>
 
-<!-- أزرار عائمة: واتساب + معرض قبل/بعد + رجوع للأعلى -->
+<!-- أزرار عائمة: واتساب + المشاريع + رجوع للأعلى -->
 <div class="floating-buttons" aria-hidden="false">
     <!-- واتساب -->
     <a class="whatsapp" href="https://wa.me/966508198692" target="_blank" rel="noopener noreferrer"
@@ -123,9 +123,9 @@
     <i class="fab fa-tiktok"></i>
   </a> 
 
-    <!-- زر لمعرض قبل/بعد (سناب/تيك توك/جاليري) -->
+    <!-- زر للمشاريع -->
     <a class="befor-after" href="projects.php"  rel="noopener noreferrer"
-       title="مشاريع قبل &amp; بعد" aria-label="مشاريع قبل &amp; بعد">
+       title="استعرض مشاريعنا" aria-label="استعرض مشاريعنا">
         <i class="fas fa-clone" aria-hidden="true"></i>
     </a>
 

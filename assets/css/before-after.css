@@ -1,4 +1,4 @@
-/* ===== قسم قبل/بعد – كروت مستقلة + لايت بوكس ===== */
+/* ===== قسم التحولات – كروت مستقلة + لايت بوكس ===== */
 
 /* الوضع النهاري */
 :root[data-theme="light"] .pillar-points li {
@@ -46,7 +46,8 @@
 .ba-title {
   margin: 16px 0 10px;
   font-size: 1.9rem;
-  font-weight: 700;
+  font-family: var(--font-brand);
+  font-weight: 800;
   color: var(--gold, #d6b46c);
 
 }
@@ -105,7 +106,7 @@
   transform: scale(1.04);
 }
 
-/* مؤشر قبل/بعد كحبة أنيقة */
+/* مؤشر الحالة كحبة أنيقة */
 .ba-state-indicator {
   position: absolute;
   top: 10px;
@@ -122,10 +123,13 @@
 
 .ba-state-pill-seg {
   font-size: 11px;
-  padding: 2px 9px;
+  padding: 4px 10px;
+  min-width: 62px;
   border-radius: 999px;
   color: #cbd5f5;
   opacity: 0.7;
+  text-align: center;
+  white-space: nowrap;
   transition: background 0.25s ease, color 0.25s ease, opacity 0.25s ease, transform 0.2s ease;
 }
 
@@ -248,7 +252,7 @@
   background: #000;
 }
 
-/* مؤشر قبل/بعد داخل اللايت بوكس */
+/* مؤشر الحالة داخل اللايت بوكس */
 .ba-state-indicator-lg {
   top: 14px;
   left: 14px;

@@ -6,7 +6,7 @@ function getProjectImages($category, $projectNumber) {
 
     // نحدد مسار الـ URL + المسار الفعلي حسب نوع التصنيف
     if ($category === 'befor_after_images' || $category === 'before_after_images') {
-        // قسم قبل/بعد مثل ما هو مستخدم في projects.php
+        // قسم التحولات مثل ما هو مستخدم في projects.php
         $basePath = "assets/befor_after_images/{$projectNumber}/";
     } else {
         // باقي الأقسام (فلل، غرف، حمامات، ممرات)
@@ -133,27 +133,27 @@ $villaShowcase = [
         'description'   => 'ممرات بتصاميم عصرية مع لمسات جمالية راقية.',
     ],
 
-    // قبل / بعد
+    // التحولات
     [
-        'title'         => 'مشروع واجهة — قبل / بعد',
-        'category'      => 'قبل/بعد',
+        'title'         => 'تحول واجهة سكنية',
+        'category'      => 'تحولات',
         'category_slug' => 'befor_after_images', // اسم المجلد في assets
         'project_number'=> '1',
-        'description'   => 'مشروع تطوير واجهة سكنية يظهر الفرق الحقيقي بين قبل وبعد التنفيذ.',
+        'description'   => 'تطوير واجهة سكنية من حالة أولية بسيطة إلى نتيجة نهائية أكثر فخامة وتنظيماً.',
     ],
     [
-        'title'         => 'مشروع داخلي — قبل / بعد',
-        'category'      => 'قبل/بعد',
+        'title'         => 'تحول مساحة داخلية',
+        'category'      => 'تحولات',
         'category_slug' => 'befor_after_images',
         'project_number'=> '2',
-        'description'   => 'تطوير مساحة داخلية كاملة وتحويلها من شكل خام إلى تصميم فاخر.',
+        'description'   => 'إعادة صياغة مساحة داخلية كاملة بخامات أرقى وتوزيع أكثر اتزاناً وانسجاماً.',
     ],
     [
-        'title'         => 'مدخل رئيسي — قبل / بعد',
-        'category'      => 'قبل/بعد',
+        'title'         => 'تحول المدخل الرئيسي',
+        'category'      => 'تحولات',
         'category_slug' => 'befor_after_images',
         'project_number'=> '3',
-        'description'   => 'ترميم وتحسين المدخل الرئيسي وإظهار التغيير بوضوح.',
+        'description'   => 'معالجة المدخل الرئيسي بخامات وإضاءة وتفاصيل تمنحه حضوراً أقوى وهوية أوضح.',
     ],
 ];
 
@@ -173,7 +173,7 @@ foreach ($villaShowcase as $i => $item) {
 
         <p class="section-subtitle">
             واجهات، غرف، حمّامات، ممرات، وتصاميم داخلية متنوعة، مع لقطات
-            <strong>قبل وبعد</strong> تعكس جودة التنفيذ في مختلف المشاريع.
+            توثّق مراحل التنفيذ وتعكس جودة النتيجة النهائية في مختلف المشاريع.
         </p>
 
         <div class="villa-grid">
@@ -183,10 +183,10 @@ foreach ($villaShowcase as $i => $item) {
                     <?php
                         switch ($item['category']) {
                             case 'فلل':     $tag = 'واجهة ومداخل — لقطات متتابعة'; break;
-                            case 'غرف':     $tag = 'تصميم داخلي — قبل / بعد';    break;
+                            case 'غرف':     $tag = 'تصميم داخلي — اتزان وتفاصيل'; break;
                             case 'حمامات': $tag = 'تفاصيل حمّام — صور حقيقية';   break;
                             case 'ممرات':  $tag = 'ممرات مضاءة — لقطات متعددة';  break;
-                            case 'قبل/بعد':$tag = 'قبل / بعد — إبراز الفرق';      break;
+                            case 'تحولات': $tag = 'تحولات موثقة — من البداية للنتيجة'; break;
                             default:        $tag = 'تبديل تلقائي بين عدة لقطات';
                         }
                     ?>
@@ -204,7 +204,7 @@ foreach ($villaShowcase as $i => $item) {
                             <button class="villa-img-arrow villa-img-next" type="button">‹</button>
                         </div>
 
-                        <div class="villa-tag <?php echo ($item['category']==='قبل/بعد' ? 'villa-tag-beforeafter' : ''); ?>">
+                        <div class="villa-tag <?php echo ($item['category']==='تحولات' ? 'villa-tag-beforeafter' : ''); ?>">
                             <?php echo htmlspecialchars($tag, ENT_QUOTES, 'UTF-8'); ?>
                         </div>
 

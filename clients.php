@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "عملاؤنا - قبل و بعد للمقاولات العامة";
+$pageTitle = "عملاؤنا";
 include 'includes/header.php';
 ?>
 
@@ -13,7 +13,7 @@ include 'includes/header.php';
 
         <div class="testimonials">
             <div class="testimonial">
-                "التعاون مع فريق قبل زبعد كان مريحًا وواضحًا، النتائج النهائية تعكس احترافية عالية."
+                "التعاون مع فريق نَسَق كان مريحاً وواضحاً، والنتائج النهائية عكست احترافية عالية وتنظيماً دقيقاً."
                 <br><span>عميل سكني</span>
             </div>
             <div class="testimonial">
@@ -33,4 +33,3 @@ include 'includes/header.php';
 </section>
 
 <?php include 'includes/footer.php'; ?>
-

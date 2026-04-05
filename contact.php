@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "تواصل معنا - قبل و بعد مقاولات عامة";
+$pageTitle = "تواصل معنا";
 $pageExtraCss = '<link rel="stylesheet" href="assets/css/contact.css">';
 $pageExtraJs = '<script src="assets/js/contact.js" defer></script>';
 include 'includes/header.php';
